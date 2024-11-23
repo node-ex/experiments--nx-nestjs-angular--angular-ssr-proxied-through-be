@@ -1,4 +1,6 @@
 /* eslint-disable */
+import type { Config } from '@jest/types';
+
 export default {
   displayName: 'app-nest-1',
   preset: '../../jest.preset.js',
@@ -21,4 +23,4 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/apps/app-nest-1',
-};
+} as Config.InitialOptions;
