@@ -4,6 +4,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {},
+  "pnpm": {
+    "overrides": {
+      "@module-federation/enhanced": "0.12.0"
+    }
+  },
   "dependencies": {
     "@angular/animations": "19.2.6",
     "@angular/common": "19.2.6",
