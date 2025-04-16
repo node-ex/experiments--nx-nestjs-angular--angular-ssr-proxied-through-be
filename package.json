@@ -1,5 +1,5 @@
 {
-  "name": "@template--nx-nestjs-angular--basic/source",
+  "name": "@experiments--nx-nestjs-angular--angular-ssr/source",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,

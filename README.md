@@ -1,4 +1,4 @@
-# template--nx-nestjs-angular--basic
+# experiments--nx-nestjs-angular--angular-ssr
 
 ## Local development
 
