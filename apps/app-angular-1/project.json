@@ -24,7 +24,12 @@
         ],
         "styles": ["apps/app-angular-1/src/styles.css"],
         "scripts": [],
-        "plugins": ["apps/app-angular-1/plugins/env-var-plugin.js"]
+        "plugins": ["apps/app-angular-1/plugins/env-var-plugin.js"],
+        "server": "apps/app-angular-1/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/app-angular-1/src/server.ts"
+        },
+        "outputMode": "server"
       },
       "configurations": {
         "production": {

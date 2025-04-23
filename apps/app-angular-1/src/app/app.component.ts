@@ -13,6 +13,6 @@ export class AppComponent {
 
 
   constructor() {
-    console.log('PUBLIC_GREETING', process.env.PUBLIC_GREETING);
+    console.log('PUBLIC_GREETING', process.env['PUBLIC_GREETING']);
   }
 }
