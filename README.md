@@ -1,5 +1,20 @@
 # experiments--nx-nestjs-angular--angular-ssr
 
+## Experiment
+
+This is an experiment project that demonstrates how to implement SSR for the Angular app using official Angular setup. `setup-angular-ssr-in-nestjs` unsuccessfully tried to implement SSR for the Angular app using NestJS as a backend.
+
+Steps:
+
+1. Setup the repository (see below)
+2. Build the Angular app
+3. Inspect the `dist/apps/app-angular-1/server` directory
+4. Start the Angular development server
+5. Go to `http://localhost:4200` to see FE
+6. Check the page source code in the browser to see the rendered HTML
+
+Implementation: See a couple of latest commits.
+
 ## Local development
 
 ### Requirements
