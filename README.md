@@ -1,17 +1,23 @@
-# experiments--nx-nestjs-angular--angular-ssr
+# experiments--nx-nestjs-angular--angular-ssr-proxied-through-be
 
 ## Experiment
 
-This is an experiment project that demonstrates how to implement SSR for the Angular app using official Angular setup. `setup-angular-ssr-in-nestjs` unsuccessfully tried to implement SSR for the Angular app using NestJS as a backend.
+This is an experiment project that demonstrates how to proxy request to Angular SSR server app through the NestJS backend. It also shows how to serve static built files for another Angular app.
 
 Steps:
 
 1. Setup the repository (see below)
-2. Build the Angular app
-3. Inspect the `dist/apps/app-angular-1/server` directory
-4. Start the Angular development server
-5. Go to `http://localhost:4200` to see FE
-6. Check the page source code in the browser to see the rendered HTML
+2. Build the Angular app 1 with `baseHref` option
+   1. `pnpm exec nx run app-angular-1:build --baseHref=/app-angular-1/`
+3. Build the Angular app 2 with `baseHref` option
+   1. `pnpm exec nx run app-angular-2:build --baseHref=/app-angular-2/`
+4. Start the built server for the Angular app 1
+   1. `node ./dist/apps/app-angular-1/server/server.mjs`
+5. Start a development server for the NestJS app 1
+   1. `pnpm exec nx run app-nest-1:serve`
+6. Go to `http://localhost:3000/app-angular-1` to see the Angular app 1
+7. Check the page source code in the browser to see the rendered HTML of the Angular app 1
+8. Go to `http://localhost:3000/app-angular-2` to see the Angular app 2
 
 Implementation: See a couple of latest commits.
 
