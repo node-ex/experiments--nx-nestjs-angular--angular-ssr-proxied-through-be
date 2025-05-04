@@ -32,8 +32,13 @@ const angularApp = new AngularNodeAppEngine();
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
-    index: false,
-    redirect: false,
+    /*
+     * The following scaffolded options are commented out so that index.html
+     * files are served when URL path ends with a directory name, with or
+     * without trailing slash.
+     */
+    // index: true,
+    // redirect: false,
   }),
 );
 

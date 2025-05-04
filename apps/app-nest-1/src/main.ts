@@ -23,10 +23,12 @@ async function bootstrap() {
     createProxyMiddleware({
       target: 'http://localhost:4000',
       changeOrigin: true,
-      pathRewrite: {
-        /* Angular router handles routing */
-        '.*': '/index.html',
-      },
+      /**
+       * This option is needed to follow redirects in case URL path ends with
+       * a directory name without a trailing slash - SSR app redirects to
+       * the same path with a trailing slash.
+       */
+      followRedirects: true,
     }),
   );
 
