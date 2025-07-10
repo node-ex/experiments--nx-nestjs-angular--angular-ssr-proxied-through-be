@@ -19,7 +19,7 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
 
   app.use(
-    '/app-angular-1',
+    '/',
     createProxyMiddleware({
       target: 'http://localhost:4000',
       changeOrigin: true,
@@ -29,8 +29,17 @@ async function bootstrap() {
        * the same path with a trailing slash.
        */
       followRedirects: true,
+      pathFilter: (pathname: string) => {
+        const excludedPaths = ['/api', '/app-angular-2'];
+        return !excludedPaths.some(path => pathname.startsWith(path));
+      },
     }),
   );
+
+  app.use((req: any, res: any, next: any) => {
+    console.log(`Visited URL: ${req.url}`);
+    next();
+  });
 
   // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const port = Number(process.env['PORT']) || 3000;

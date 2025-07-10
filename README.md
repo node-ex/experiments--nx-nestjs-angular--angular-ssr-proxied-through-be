@@ -8,7 +8,7 @@ Steps:
 
 1. Setup the repository (see below)
 2. Build the Angular app 1 with `baseHref` option
-   1. `pnpm exec nx run app-angular-1:build --baseHref=/app-angular-1/`
+   1. `pnpm exec nx run app-angular-1:build`
 3. Build the Angular app 2 with `baseHref` option
    1. `pnpm exec nx run app-angular-2:build --baseHref=/app-angular-2/`
 4. Start the built server for the Angular app 1
@@ -64,7 +64,7 @@ pnpm exec nx run app-nest-1:preview
 node ./dist/apps/app-nest-1/main.js
 
 # Preview frontend
-pnpx serve --single ./dist/apps/app-angular-1/browser
+pnpm exec serve --single ./dist/apps/app-angular-1/browser
 ```
 
 ### Formatting
