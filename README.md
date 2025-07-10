@@ -4,6 +4,10 @@
 
 This is an experiment project that demonstrates how to proxy request to Angular SSR server app through the NestJS backend. It also shows how to serve static built files for another Angular app.
 
+Implementation: See a couple of latest commits.
+
+### Experiment 1 - Without Docker container
+
 Steps:
 
 1. Setup the repository (see below)
@@ -16,10 +20,23 @@ Steps:
 5. Start a development server for the NestJS app 1
    1. `pnpm exec nx run app-nest-1:serve`
 6. Go to `http://localhost:3000/app-angular-1` to see the Angular app 1
-7. Check the page source code in the browser to see the rendered HTML of the Angular app 1
-8. Go to `http://localhost:3000/app-angular-2` to see the Angular app 2
+   1. Check the page source code in the browser to see the rendered HTML of the Angular app 1
+7. Go to `http://localhost:3000/app-angular-2` to see the Angular app 2
 
-Implementation: See a couple of latest commits.
+### Experiment 2 - With Docker container
+
+Steps:
+
+1. Setup the repository (see below)
+2. Build the `app-angular-1-ssr` image
+   1. `./scripts/docker/app-angular-1-ssr/build.sh`
+3. Run the `app-angular-1-ssr` container
+   1. `./scripts/docker/app-angular-1-ssr/run.sh`
+4. Start a development server for the NestJS app 1
+   1. `pnpm exec nx run app-nest-1:serve`
+5. Go to `http://localhost:3000/app-angular-1` to see the Angular app 1
+   1. Check the page source code in the browser to see the rendered HTML of the Angular app 1
+6. Go to `http://localhost:3000/app-angular-2` to see the Angular app 2
 
 ## Local development
 
@@ -29,6 +46,7 @@ Implementation: See a couple of latest commits.
   - See `.tool-versions` for the recommended version
 - `pnpm`
   - Installed globally
+- Docker
 
 ### Setup
 
